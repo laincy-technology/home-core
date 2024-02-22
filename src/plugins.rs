@@ -13,7 +13,7 @@ pub async fn loaded() -> Result<Plugins> {
     for file in plugin_files {
         let plugin_path = file?.path().join("plugin.json");
         let plugin_info = std::fs::read_to_string(plugin_path);
-        let plugin: Plugin = serde_json::from_str(&plugin_info?).expect("Failed to parse plugin");
+        let plugin: Plugin = serde_json::from_str(&plugin_info?)?;
         plugins.push(plugin);
     }
     Ok(plugins)

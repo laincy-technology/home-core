@@ -41,7 +41,7 @@ pub async fn get() -> Result<Accounts> {
 impl Account {
 
     pub fn has_perm(&self, perm: Permission) -> bool {
-        let res = matches!(self.permissions, )
+        unimplemented!()
     }
 
 }
